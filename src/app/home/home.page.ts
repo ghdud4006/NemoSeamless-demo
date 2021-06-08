@@ -39,7 +39,8 @@ export class HomePage {
       resultType: CameraResultType.DataUrl,
       source: CameraSource.Photos
     });
-
+    
+    console.log('metadata of photo: '+image);
     this.photo = this.sanitizer.bypassSecurityTrustResourceUrl(image && (image.dataUrl))
   }
 
