@@ -15,6 +15,10 @@ Using Browser:
 
 ```
 $ npm install -g @ionic/cli
+$ npm install -g @angular/core
+$ npm install -g @capacitor/core
+$ npm install -g @capacitor/camera
+$ npm install -g @angular/platform-browser
 $ cd NemoSeamless-demo
 $ ionic integrations enable capacitor
 $ npx cap init
@@ -32,6 +36,10 @@ Using Android:
 1. Build Web Application
 ```
 $ npm install -g @ionic/cli
+$ npm install -g @angular/core
+$ npm install -g @capacitor/core
+$ npm install -g @capacitor/camera
+$ npm install -g @angular/platform-browser
 $ cd NemoSeamless-demo
 $ ionic integrations enable capacitor
 $ npx cap init
