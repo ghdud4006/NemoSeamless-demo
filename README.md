@@ -1,51 +1,66 @@
 # NemoSeamless-demo
 
+## Dependency
+NodeJS -v 14.17.0
+NPM -v 6.14.13
+Ionic -v 6.16.2
+NPX -v 6.14.13
+
 ## Installation
 
-Using Autotools:
+Using Browser:
 
 ```
-$ cd pebblesdb/src
-$ autoreconf -i
-$ ./configure
-$ make
-$ make install
-$ ldconfig
+$ npm install -g @ionic/cli
+$ cd NemoSeamless-demo
+$ ionic integrations enable capacitor
+$ npx cap init
+$ ionic build
+$ npx cap add android
+$ npm install @ionic/pwa-elements
+$ ionic build
+$ npx cap sync
+$ ionic serve --external
 ```
 
-Using CMake:
 
-```shell
-$ mkdir -p build && cd build
-$ cmake .. && make install -j16
+Using Android:
+
+1. Build Web Application
+```
+$ npm install -g @ionic/cli
+$ cd NemoSeamless-demo
+$ ionic integrations enable capacitor
+$ npx cap init
+$ ionic build
+$ npx cap add android
+$ npm install @ionic/pwa-elements
+$ ionic build
+$ npx cap sync
+$ npx cap open android
 ```
 
-___
-
-## Running microbenchmark
-1. `cd pebblesdb/src/`
-2. `make db_bench`  (this only works if you are compiling using autotools, and have done `autoreconf` and `configure` before this step)
-3. `./db_bench --benchmarks=<list-of-benchmarks> --num=<number-of-keys> --value_size=<size-of-value-in-bytes> --reads=<number-of-reads> --db=<database-directory-path>`  
-A complete set of parameters can be found in `db/db_bench.cc`  
-
-Sample usage:  
-`./db_bench --benchmarks=fillrandom,readrandom --num=1000000 --value_size=1024 --reads=500000 --db=/tmp/pebblesdbtest-1000`
-
-
-Use `filter` benchmark property to print the filter policy statistics like memory usage.
-
-`./db_bench --benchmarks=fillrandom,readrandom,filter --num=1000000 --value_size=1024 --reads=500000 --db=/tmp/pebblesdbtest-1000`
-
+2. Allow Permission in `menifest.xml`
 ```
-    fillrandom   :     110.460 micros/op;    9.0 MB/s
-    readrandom   :       4.120 micros/op; (5000 of 10000 found)
+<!-- Permissions -->
 
-    Filter in-memory size: 0.024 MB
-    Count of filters: 1928
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Camera, Photos, input file -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!-- Geolocation API -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-feature android:name="android.hardware.location.gps"/>
+    <!-- Network API -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- Video -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <!-- Audio -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
 ```
-
-___
-
 
 ---
 ## Contact
