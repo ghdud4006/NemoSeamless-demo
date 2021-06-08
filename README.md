@@ -1,6 +1,6 @@
 # NemoSeamless-demo
 
-## Dependency
+## Dependencies
 NodeJS -v 14.17.0 
 
 NPM -v 6.14.13
