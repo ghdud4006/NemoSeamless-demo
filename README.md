@@ -1,9 +1,12 @@
 # NemoSeamless-demo
 
 ## Dependency
-NodeJS -v 14.17.0
+NodeJS -v 14.17.0 
+
 NPM -v 6.14.13
+
 Ionic -v 6.16.2
+
 NPX -v 6.14.13
 
 ## Installation
