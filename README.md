@@ -9,7 +9,7 @@ Ionic -v 6.16.2
 
 NPX -v 6.14.13
 
-## Installation & Bluild & Running Application
+## Installation & Bluild & Running
 
 Using Browser:
 
